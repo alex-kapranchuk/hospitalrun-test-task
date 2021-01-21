@@ -49,9 +49,17 @@ public class RequestMedicationTest extends BaseTest {
         String getReturnMedicationTest = LeftBarMEDICATION.getReturnMedicationText();
         Assert.assertEquals(getReturnMedicationTest, "Return Medication","Section ReturnMedication is not displayed");
         LeftBarMEDICATION.ClickNewRequest();
+        //Typing patient name
         NewMedicationRequestPAGE.Name1(NewMedicationRequestPAGE.PatientField, "Test Patient");
-        System.out.println("select");
-        NewMedicationRequestPAGE.sortByTestPatient();
+        NewMedicationRequestPAGE.ClickPatient();
+        System.out.println("visit select");
+
+
+
+
+
+
+
 
 
 
