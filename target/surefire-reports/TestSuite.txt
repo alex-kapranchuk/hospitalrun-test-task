@@ -1,0 +1,58 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 3, Errors: 0, Skipped: 3, Time elapsed: 3.73 s <<< FAILURE! - in TestSuite
+setUp(tests.LoginPageTest)  Time elapsed: 3.511 s  <<< FAILURE!
+java.lang.VerifyError: 
+Expecting a stackmap frame at branch target 37
+Exception Details:
+  Location:
+    pages/home/LoginPage.TypeInInvalidUserName()V @9: invokestatic
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0000000: b200 b72a 2ab8 0094 4cb8 009a 2bb6 009e
+    0000010: 2ab4 004a 04bd 004d 5903 125c 53b9 0051
+    0000020: 0200 a700 0d4d b800 9a2c b600 a22c bfb8
+    0000030: 009a b600 a5b1                         
+  Exception Handler Table:
+    bci [9, 37] => handler: 37
+
+	at tests.LoginPageTest.setUp(LoginPageTest.java:20)
+
+setUp(tests.LoginPageInvalidTest)  Time elapsed: 3.535 s  <<< FAILURE!
+java.lang.VerifyError: 
+Expecting a stackmap frame at branch target 37
+Exception Details:
+  Location:
+    pages/home/LoginPage.TypeInInvalidUserName()V @9: invokestatic
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0000000: b200 b72a 2ab8 0094 4cb8 009a 2bb6 009e
+    0000010: 2ab4 004a 04bd 004d 5903 125c 53b9 0051
+    0000020: 0200 a700 0d4d b800 9a2c b600 a22c bfb8
+    0000030: 009a b600 a5b1                         
+  Exception Handler Table:
+    bci [9, 37] => handler: 37
+
+	at tests.LoginPageInvalidTest.setUp(LoginPageInvalidTest.java:20)
+
+setUp(tests.LoginPageLogoutTest)  Time elapsed: 3.571 s  <<< FAILURE!
+java.lang.VerifyError: 
+Expecting a stackmap frame at branch target 37
+Exception Details:
+  Location:
+    pages/home/LoginPage.TypeInInvalidUserName()V @9: invokestatic
+  Reason:
+    Expected stackmap frame at this location.
+  Bytecode:
+    0000000: b200 b72a 2ab8 0094 4cb8 009a 2bb6 009e
+    0000010: 2ab4 004a 04bd 004d 5903 125c 53b9 0051
+    0000020: 0200 a700 0d4d b800 9a2c b600 a22c bfb8
+    0000030: 009a b600 a5b1                         
+  Exception Handler Table:
+    bci [9, 37] => handler: 37
+
+	at tests.LoginPageLogoutTest.setUp(LoginPageLogoutTest.java:18)
+

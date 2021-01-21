@@ -1,0 +1,1 @@
+{"uuid":"d389f1a0-ae48-4b9e-bc52-036d671f4e4c","name":"hospitalrun.test.task","children":["268b1e33-96ab-4963-9248-4009e730cf8b"],"befores":[{"name":"initialization","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1611144233232,"stop":1611144235490}],"afters":[],"links":[],"start":1611144233207,"stop":1611144238321}
