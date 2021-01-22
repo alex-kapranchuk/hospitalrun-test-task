@@ -1,6 +1,8 @@
 package tests;
 
 import common.BaseTest;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -50,21 +52,42 @@ public class RequestMedicationTest extends BaseTest {
         Assert.assertEquals(getReturnMedicationTest, "Return Medication","Section ReturnMedication is not displayed");
         LeftBarMEDICATION.ClickNewRequest();
         //Typing patient name
-        NewMedicationRequestPAGE.Name1(NewMedicationRequestPAGE.PatientField, "Test Patient");
+        NewMedicationRequestPAGE.Patient(NewMedicationRequestPAGE.PatientField, "Test Patient");
         NewMedicationRequestPAGE.ClickPatient();
-        System.out.println("visit select");
-
-
-
-
-
-
-
-
-
-
-        /*NewMedicationRequestPage newMedicationRequestPage = new NewMedicationRequestPage(driver);
-        newMedicationRequestPage.Name1(newMedicationRequestPage.PatientField,"Pa");*/
-
+        NewMedicationRequestPAGE.getSelectVisit();
+        //Typing Medication name
+        NewMedicationRequestPAGE.PramoxineType(NewMedicationRequestPAGE.MedicationField, "Pramoxine");
+        NewMedicationRequestPAGE.ClickMedication();
+        //Typing Testing prescription
+        NewMedicationRequestPAGE.TypeInPrescription();
+        //Select yesterday
+        NewMedicationRequestPAGE.DellData();
+        String getPrescriptionDateTest = NewMedicationRequestPAGE.getPrescriptionDate();
+        NewMedicationRequestPAGE.PrescriptionDate.sendKeys(getPrescriptionDateTest);
+        //type random number Quantity Requested
+        String getRandomQuantity = NewMedicationRequestPAGE.RandomQuantityGet();
+        NewMedicationRequestPAGE.QuantityRequested.sendKeys(getRandomQuantity);
+        //type random number Quantity Refills
+        String getRandomRefills = NewMedicationRequestPAGE.RandomRefills();
+        NewMedicationRequestPAGE.Refills.sendKeys(getRandomRefills);
+        //Add
+        NewMedicationRequestPAGE.ClickAdd();
+        //Assert Pop-UP
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        //wait (потрібно вейтер)
+        String MedicationRequestSaved = NewMedicationRequestPAGE.getMedicationRequestSaved1();
+        Assert.assertEquals(MedicationRequestSaved, "The medication record has been saved.","Text is not displayed");
+        //contains next items
+        Assert.assertTrue(driver.findElement(By.xpath("//button[text()='Ok']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//span[contains(@class, 'octicon octicon-x')]")).isDisplayed());
+        //Click ok
+        NewMedicationRequestPAGE.ClickOK();
+        //is not displayed
+        Assert.assertTrue(NewMedicationRequestPAGE.isVisibleMedicationRequestSaved());
+        //Assert.assertFalse(NewMedicationRequestPAGE.isElementPresent());
     }
 }
