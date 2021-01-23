@@ -14,7 +14,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.NoSuchElementException;
 import java.util.Random;
 
 import static java.lang.Thread.sleep;
@@ -27,7 +26,6 @@ public class NewMedicationRequestPage extends BaseTest {
         int timeOutInSeconds = 5;
         wait = new WebDriverWait(BaseTest.driver, timeOutInSeconds);
     }
-
 
     @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div/div[1]/form/div[1]/div[1]/div/span/input[2]")
     public WebElement PatientField;
@@ -64,22 +62,15 @@ public class NewMedicationRequestPage extends BaseTest {
 
     @FindBy(xpath = "//div[text()= \"The medication record has been saved.\"]")
     public WebElement MedicationRequestSavedText1;
-//*[text()='Medication Request Saved']
 
-    @Step("2")
-    public boolean isElementPresent() {
-        try {
-            driver.findElement(By.xpath("//div[text()= \"The medication record has been saved.\"]"));
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
+    @Step("Element is displayed")
+    public void WaitPopUp(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()= \"The medication record has been saved.\"]")));
     }
-    @Step("2")
+    @Step("Element is not displayed")
     public boolean isVisibleMedicationRequestSaved() {
         return wait.until(ExpectedConditions.invisibilityOfElementWithText(By.xpath("//div[text()= \"The medication record has been saved.\"]"),"The medication record has been saved."));
     }
-
     @Step("visibility of element")
     public String getMedicationRequestSaved1() { return MedicationRequestSavedText1.getText(); }
 
@@ -90,7 +81,7 @@ public class NewMedicationRequestPage extends BaseTest {
     @Step("Click OK button")
     public void ClickOK(){OkButton.click();}
 
-    @Step("Selecet Visit")
+    @Step("Select Visit")
     public void getSelectVisit() {
         Select select = new Select(SelectVisit);
         select.selectByVisibleText("10/19/2020 (Pharmacy)");
@@ -102,7 +93,6 @@ public class NewMedicationRequestPage extends BaseTest {
             listOfMedication.get(rand).click();
             return this;
         }*/
-
     }
     @Step("Select Medication ")
     public void ClickMedication() {

@@ -73,12 +73,7 @@ public class RequestMedicationTest extends BaseTest {
         //Add
         NewMedicationRequestPAGE.ClickAdd();
         //Assert Pop-UP
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        //wait (потрібно вейтер)
+        NewMedicationRequestPAGE.WaitPopUp();
         String MedicationRequestSaved = NewMedicationRequestPAGE.getMedicationRequestSaved1();
         Assert.assertEquals(MedicationRequestSaved, "The medication record has been saved.","Text is not displayed");
         //contains next items
@@ -88,6 +83,5 @@ public class RequestMedicationTest extends BaseTest {
         NewMedicationRequestPAGE.ClickOK();
         //is not displayed
         Assert.assertTrue(NewMedicationRequestPAGE.isVisibleMedicationRequestSaved());
-        //Assert.assertFalse(NewMedicationRequestPAGE.isElementPresent());
     }
 }

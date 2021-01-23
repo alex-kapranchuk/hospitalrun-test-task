@@ -4,7 +4,9 @@
     <test name="Home Page">
         <classes>
             <class name="tests.LoginPageTest"/>
-           // <class name="tests.PageTest"/>
+            <class name="tests.LoginPageLogoutTest"/>
+            <class name="tests.LoginPageInvalidTest"/>
+            <class name="tests.RequestMedicationTest"/>
         </classes>
     </test>
 </suite>
