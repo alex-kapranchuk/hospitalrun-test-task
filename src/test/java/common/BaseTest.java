@@ -16,8 +16,8 @@ public class BaseTest {
     public static WebDriver driver;
     public static Properties prop;
 
-    public static long PAGE_LOAD_TIMEOUT = 10;
-    public static long IMPLICIT_WAIT = 10;
+    public static long PAGE_LOAD_TIMEOUT = 7;
+    public static long IMPLICIT_WAIT = 7;
 
     public BaseTest() {
         try {
@@ -48,10 +48,10 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);
     }
 
-    /*@AfterTest
+    @AfterTest
     public void quit() {
         driver.quit();
-    }*/
+    }
 
 }
 

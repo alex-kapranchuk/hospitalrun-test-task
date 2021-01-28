@@ -22,7 +22,7 @@ public class LoginPageLogoutTest extends BaseTest {
         loginPAGE.openMainUrl();
     }
 
-    @Test(priority = 3)
+    @Test
     public void LogoutTest() {
         loginPAGE.VisibilityOfTitle();
         loginPAGE.TypeInUserName();

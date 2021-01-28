@@ -23,7 +23,7 @@ public class LoginPageTest extends BaseTest {
         loginPAGE.openMainUrl();
     }
 
-    @Test(priority = 1)
+    @Test
     public void LoginTest() {
         loginPAGE.VisibilityOfTitle();
         loginPAGE.TypeInUserName();
@@ -38,7 +38,14 @@ public class LoginPageTest extends BaseTest {
         String WebElementText = leftBAR.getWebElementText();
         Assert.assertEquals(WebElementText, "Logout", "Logout is not displayed");
         System.out.println(WebElementText);
-    }
+
+        //part from Logout test
+        leftBAR.ClickLogout();
+        loginPAGE.VisibilityOfPleaseSignIn();
+        String getPleaseSignInTest = loginPAGE.getPleaseSignIn();
+        System.out.println(getPleaseSignInTest);
+        Assert.assertEquals(getPleaseSignInTest, "PLEASE SIGN IN");
+            }
 
 }
 

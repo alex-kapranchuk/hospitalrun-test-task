@@ -29,7 +29,7 @@ public class RequestMedicationTest extends BaseTest {
         NewMedicationRequestPAGE = new NewMedicationRequestPage(driver);
         loginPAGE.openMainUrl();
     }
-    @Test(priority = 4)
+    @Test
     public void RequestMedicationTest() {
         loginPAGE.VisibilityOfTitle();
         loginPAGE.TypeInUserName();

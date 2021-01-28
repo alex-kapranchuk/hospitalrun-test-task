@@ -23,7 +23,7 @@ public class LoginPageInvalidTest extends BaseTest {
         loginPAGE.openMainUrl();
     }
 
-    @Test(priority = 2)
+    @Test
     public void InvalidDataLoginTest() {
         loginPAGE.openMainUrl();
         loginPAGE.VisibilityOfTitle();
