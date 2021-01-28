@@ -1,0 +1,1 @@
+{"uuid":"356f3317-a0ed-4536-89cf-28f3c0d45362","name":"prestashop","children":["6d33467d-ae62-4ca4-bb10-6eeb01d14dc4"],"befores":[{"name":"initialization","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1611827682189,"stop":1611827684695}],"afters":[],"links":[],"start":1611827682153,"stop":1611827687663}
