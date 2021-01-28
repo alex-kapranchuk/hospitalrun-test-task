@@ -48,10 +48,10 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);
     }
 
-    @AfterTest
+   /* @AfterTest
     public void quit() {
         driver.quit();
-    }
+    }*/
 
 }
 

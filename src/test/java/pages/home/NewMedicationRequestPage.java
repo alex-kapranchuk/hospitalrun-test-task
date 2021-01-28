@@ -27,13 +27,13 @@ public class NewMedicationRequestPage extends BaseTest {
         wait = new WebDriverWait(BaseTest.driver, timeOutInSeconds);
     }
 
-    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div/div[1]/form/div[1]/div[1]/div/span/input[2]")
+    @FindBy(css = "div > div > div > span > [type='text'].form-control + input")
     public WebElement PatientField;
 
     @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div/div[1]/form/div[1]/div[1]/div/span/div/div/div[4]")
     private WebElement PatientSelect;
 
-    @FindBy(xpath = "//select[contains(@class,'form-control ')]")
+    @FindBy(css = "select.form-control")
     private WebElement SelectVisit;
 
     @FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div/div[1]/form/div[2]/div/span/div/div/div[1]")
