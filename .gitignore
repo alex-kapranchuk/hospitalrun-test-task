@@ -43,7 +43,7 @@ allure-results/
 build/
 out/
 /*.iml
-/*.log
+*.log
 **/pages/*.html
 **/har/*.har
 **/allure-report.zip
