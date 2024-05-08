@@ -8,10 +8,15 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-
 public class LeftBar extends BaseTest {
 
     private static WebDriverWait wait;
+    @FindBy(xpath = "//*[@id=\"ember433\"]/nav/header/a[2]")
+    WebElement Setting;
+    @FindBy(xpath = "//*[@id=\"ember433\"]/nav/header/nav/a[1]")
+    WebElement Logout;
+    @FindBy(xpath = "//*[@id=\"ember767\"]")
+    WebElement Medication;
 
     public LeftBar() {
         PageFactory.initElements(driver, this);
@@ -20,25 +25,23 @@ public class LeftBar extends BaseTest {
         wait = new WebDriverWait(driver, timeOutInSeconds);
     }
 
-    @FindBy(xpath = "//*[@id=\"ember433\"]/nav/header/a[2]")
-    WebElement Setting;
-
-    @FindBy(xpath = "//*[@id=\"ember433\"]/nav/header/nav/a[1]")
-    WebElement Logout;
-
-    @FindBy(xpath = "//*[@id=\"ember767\"]")
-    WebElement Medication;
-
-
     @Step("Click Medication")
-    public void ClickMedication(){Medication.click();}
+    public void ClickMedication() {
+        Medication.click();
+    }
 
     @Step("Open settings")
-    public void OpenSetting(){ Setting.click();}
+    public void OpenSetting() {
+        Setting.click();
+    }
 
     @Step("Verify status")
-    public String getWebElementText() {return Logout.getText();}
+    public String getWebElementText() {
+        return Logout.getText();
+    }
 
     @Step("Click logout")
-    public void ClickLogout(){Logout.click();}
+    public void ClickLogout() {
+        Logout.click();
+    }
 }

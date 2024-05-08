@@ -31,7 +31,7 @@ public class LoginPageInvalidTest extends BaseTest {
         loginPAGE.TypeInInvalidPassword();
         loginPAGE.ClickSignIn();
         String InvalidMessageTest = loginPAGE.getValidationText();
-        System.out.println(InvalidMessageTest);
+
         Assert.assertEquals(InvalidMessageTest, "Username or password is incorrect.", "Error is not displayed");
     }
 

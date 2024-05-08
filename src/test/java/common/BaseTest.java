@@ -7,7 +7,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
@@ -24,8 +23,6 @@ public class BaseTest {
             prop = new Properties();
             FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "/src/test/" + "java/utils/config.properties");
             prop.load(ip);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -48,10 +45,9 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT, TimeUnit.SECONDS);
     }
 
-   /* @AfterTest
+    @AfterTest
     public void quit() {
         driver.quit();
-    }*/
-
+    }
 }
 

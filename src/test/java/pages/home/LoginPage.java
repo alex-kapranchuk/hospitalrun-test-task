@@ -42,11 +42,14 @@ public class LoginPage extends BaseTest {
     public void VisibilityOfTitle() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@class ,'signin-logo')]")));
     }
+
     @Step("Login title is displayed")
-    public String getPleaseSignIn(){ return SignInText.getText();}
+    public String getPleaseSignIn() {
+        return SignInText.getText();
+    }
 
     @Step("Login page title wait")
-    public void VisibilityOfPleaseSignIn(){
+    public void VisibilityOfPleaseSignIn() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"ember433\"]/div/form/div[2]/h2")));
     }
 
@@ -61,10 +64,14 @@ public class LoginPage extends BaseTest {
     }
 
     @Step("Type in invalid Password")
-    public void TypeInInvalidPassword(){PasswordField.sendKeys("invalidTEST");}
+    public void TypeInInvalidPassword() {
+        PasswordField.sendKeys("invalidTEST");
+    }
 
     @Step("Type in invalid Username")
-    public void TypeInInvalidUserName(){UsernameField.sendKeys("Test.doctor@hospitalrun.io12");}
+    public void TypeInInvalidUserName() {
+        UsernameField.sendKeys("Test.doctor@hospitalrun.io12");
+    }
 
     @Step("Sign in")
     public void ClickSignIn() {
@@ -72,6 +79,8 @@ public class LoginPage extends BaseTest {
     }
 
     @Step("Error message is displayed.")
-    public String getValidationText() {return InvalidError.getText();}
+    public String getValidationText() {
+        return InvalidError.getText();
+    }
 
 }

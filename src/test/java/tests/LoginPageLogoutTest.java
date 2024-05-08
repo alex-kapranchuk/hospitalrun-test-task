@@ -29,12 +29,12 @@ public class LoginPageLogoutTest extends BaseTest {
         loginPAGE.TypeInPassword();
         loginPAGE.ClickSignIn();
         homePAGE.VisibilityOfTitlePatient();
-        //III.	User is able to logout
+
         leftBAR.OpenSetting();
         leftBAR.ClickLogout();
         loginPAGE.VisibilityOfPleaseSignIn();
         String getPleaseSignInTest = loginPAGE.getPleaseSignIn();
-        System.out.println(getPleaseSignInTest);
-       Assert.assertEquals(getPleaseSignInTest, "PLEASE SIGN IN");
+
+        Assert.assertEquals(getPleaseSignInTest, "PLEASE SIGN IN");
     }
 }
