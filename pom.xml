@@ -10,37 +10,27 @@
 
 
     <dependencies>
-
-        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>6.14.3</version>
             <scope>compile</scope>
         </dependency>
-
-
-        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>3.141.59</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
             <version>4.1.0</version>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>2.6</version>
         </dependency>
-
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-testng</artifactId>
@@ -52,9 +42,8 @@
             <version>2.6</version>
             <scope>test</scope>
         </dependency>
-
-
     </dependencies>
+
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -64,7 +53,6 @@
         <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
         <allure-testng.version>2.12.1</allure-testng.version>
     </properties>
-
     <build>
         <plugins>
             <plugin>
@@ -93,7 +81,6 @@
                     </dependency>
                 </dependencies>
             </plugin>
-
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
@@ -102,8 +89,6 @@
                     <reportVersion>2.9.0</reportVersion>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
-
 </project>
