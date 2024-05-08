@@ -47,3 +47,5 @@ out/
 **/pages/*.html
 **/har/*.har
 **/allure-report.zip
+**/.idea/*
+**/allure-results/*
